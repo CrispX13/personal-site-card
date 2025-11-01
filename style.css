@@ -1,0 +1,306 @@
+/* Подключение шрифтов Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
+
+/* CSS переменные - loft с акцентами */
+:root {
+  --bg-main: #F8F9FA;           /* мягкий светло-серый фон */
+  --bg-header: #FFFFFF;         /* белый header */
+  --bg-card: #FFFFFF;           /* чистый белый для карточек */
+  --card-hover: #F0F4F8;        /* легкий голубоватый при наведении */
+  --accent: #3B82F6;            /* яркий синий акцент */
+  --accent-dark: #2563EB;       /* насыщенный синий */
+  --accent-soft: #60A5FA;       /* светло-синий */
+  --footer-bg: #1E293B;         /* современный темно-серый для footer */
+  --text-main: #1F2937;         /* основной текст */
+  --text-secondary: #6B7280;    /* вторичный текст */
+  --text-light: #E5E7EB;        /* светлый текст для footer */
+  --border: #E5E7EB;            /* светлые границы */
+  --shadow-card: 0 4px 12px rgba(59, 130, 246, 0.08);
+  --shadow-hover: 0 12px 32px rgba(59, 130, 246, 0.18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header стили */
+header {
+  background: var(--bg-header);
+  padding: 1.5rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading__greeting-page {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.heading__greeting-page::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.heading__greeting-page:hover::after {
+  width: 100%;
+}
+
+.heading__greeting-page:hover {
+  color: var(--accent-dark);
+}
+
+.header__list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.header__item-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.header__item-link:hover {
+  color: var(--accent);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+/* Greeting section */
+.greeting {
+  flex: 1;
+  padding: 3rem 0 4rem 0;
+}
+
+.greeting__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.greeting__heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3.2rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.greeting__heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 100%);
+  border-radius: 2px;
+}
+
+.greeting__description {
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.greeting__description-title {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.greeting__description-extra-text {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+/* Карточки с современным дизайном */
+.greeting__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.greeting__item {
+  list-style: none;
+}
+
+.greeting__item-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  color: var(--text-main);
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  position: relative;
+  min-height: 200px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.greeting__item-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%);
+  transition: height 0.4s ease;
+}
+
+.greeting__item-link:hover::before {
+  height: 100%;
+}
+
+.greeting__item-link:hover {
+  background: var(--card-hover);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-10px);
+  border-color: var(--accent-soft);
+}
+
+.greeting__item-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1.2rem;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: color 0.3s ease;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+}
+
+.greeting__item-link:hover .greeting__item-heading {
+  color: var(--accent);
+}
+
+.greeting__item-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent) 100%);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.greeting__item-link:hover .greeting__item-img {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+}
+
+/* Footer стили */
+footer {
+  background: var(--footer-bg);
+  padding: 2.5rem 0;
+  margin-top: auto;
+  position: relative;
+  min-height: 100px;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  height: 100%;
+}
+
+.footer__author {
+  position: absolute;
+  left: 2rem;
+  top: 1 rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .header__list {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .greeting__heading {
+    font-size: 2.2rem;
+  }
+  
+  .greeting__list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer__author {
+    position: static;
+    display: block;
+    border-left: none;
+    border-top: 3px solid var(--accent);
+    padding-left: 0;
+    padding-top: 0.8rem;
+  }
+}
