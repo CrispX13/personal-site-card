@@ -304,3 +304,629 @@ footer {
     padding-top: 0.8rem;
   }
 }
+
+/* Стандартная секция */
+.standart-section {
+  margin: 0 0 2.5rem 0;
+  background: var(--section-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--section-border);
+}
+.standart-section-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2.5rem 2rem;
+}
+.standart-section-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.1rem;
+  color: var(--accent);
+  margin-bottom: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.standart-text-sections-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.standart-section-img {
+  flex-shrink: 0;
+  width: 115px;
+  min-width: 95px;
+  max-width: 140px;
+  max-height: 120px;
+  display: block;
+  background: #e7ebf0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.08);
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  object-fit: contain;
+  /* SVG картинки впишутся без искажения */
+}
+.standart-section-text {
+  color: var(--text-main);
+  font-size: 1.11rem;
+  font-weight: 400;
+  line-height: 1.7;
+  flex: 1;
+  margin: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-main: #F8F9FA;
+  --bg-header: #FFFFFF;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --section-bg: #FFFFFF;
+  --section-border: #E5E7EB;
+  --text-main: #1F2937;
+  --text-secondary: #6B7280;
+  --footer-bg: #1E293B;
+  --footer-text: #E5E7EB;
+  --shadow: 0 2px 12px rgba(59,130,246,0.12);
+  --shadow-light: 0 1px 4px rgba(59,130,246,0.04);
+  --radius: 16px;
+}
+
+/* Общий вид резюме */
+.resume {
+  max-width: 1100px;
+  margin: 3rem auto 2.5rem auto;
+  background: var(--section-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-family: 'Inter', sans-serif;
+  padding: 0 0 2rem 0;
+  border: 1.2px solid var(--section-border);
+  position: relative;
+}
+
+/* Верхняя шапка */
+.resume__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2rem 1.2rem 2rem;
+  background: var(--bg-header);
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--section-border);
+}
+.resume__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.resume__badge {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.4rem 1.1rem 0.4rem 1.1rem;
+  border-radius: 10px;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  width: max-content;
+  margin-bottom: 0.35rem;
+  box-shadow: var(--shadow-light);
+}
+.resume__badge span {
+  color: var(--footer-bg);
+  letter-spacing: 0;
+}
+.resume__example {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-left: 2px;
+}
+.resume__photo img {
+  position: absolute;
+  top: 55px;
+  right: 30px;
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  border: 3px solid var(--section-border);
+}
+
+/* Имя и должность */
+.resume__top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.2rem 2rem 1.1rem 2rem;
+}
+.resume__name {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.2em;
+  letter-spacing: -1px;
+  font-family: inherit;
+}
+.resume__role {
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin-bottom: 0.1em;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+.resume__info {
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  margin-top: 0.2em;
+  display: flex;
+  gap: 1.2em;
+}
+
+/* Диvider */
+.resume__divider {
+  border: none;
+  border-bottom: 2px solid var(--section-border);
+  margin: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Основная часть: левой и правой колонки */
+.resume__main {
+  display: flex;
+  gap: 2.2rem;
+  padding: 0 2rem;
+}
+.resume__left, .resume__right {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media(max-width: 950px) {
+  .resume__main {
+    flex-direction: column;
+    gap: 2.2rem;
+  }
+  .resume__left, .resume__right {
+    width: 100%;
+  }
+}
+/* Вертикальные блоги */
+.resume__block {
+  margin-bottom: 1.6rem;
+}
+.resume__block-title {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.14rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: -0.3px;
+  font-family: 'Space Grotesk',sans-serif;
+}
+.resume__block-title:not(:first-child) {
+  margin-top: 1.2rem;
+}
+.resume__job, .resume__education, .resume__courses, .resume__public,
+.resume__recommendation, .resume__hobbies, .resume__about, .resume__contacts,
+.resume__salary, .resume__busy, .resume__lang, .resume__skills, .resume__qualities {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* Работа */
+.resume__job {
+  margin-bottom: 1rem;
+}
+.resume__job-title {
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-block;
+  font-size: 1.09rem;
+  margin-bottom: 0.12em;
+}
+.resume__job-duration {
+  float: right;
+  color: var(--text-secondary);
+  font-size: 0.99rem;
+  font-weight: 400;
+}
+.resume__job-role {
+  color: var(--text-main);
+  font-weight: 500;
+  margin-bottom: 0.2em;
+  font-size: 1.01rem;
+}
+.resume__job-desc {
+  margin-top: 0.4em;
+  color: var(--text-secondary);
+}
+.resume__job-desc ul {
+  padding-left: 1.2em;
+  margin: 0.15em 0 0.2em 0;
+}
+
+/* Образование, курсы, публикации */
+.resume__education, .resume__courses, .resume__public {
+  margin-bottom: 0.8em;
+}
+.resume__edu-place {
+  font-weight: 600;
+  color: var(--text-main);
+  display: inline-block;
+}
+.resume__edu-date {
+  color: var(--text-secondary);
+  font-size: 0.97rem;
+  margin-left: 0.7em;
+}
+.resume__edu-spec {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.2em;
+}
+.resume__year {
+  color: var(--text-secondary);
+  font-size: 0.97em;
+  font-weight: 400;
+  margin-left: 0.65em;
+}
+
+.resume__public {
+  font-size: 1rem;
+  color: var(--accent);
+}
+.resume__recommendation {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-top: 0.2em;
+}
+.resume__hobbies {
+  color: var(--text-main);
+  font-style: italic;
+}
+.resume__about {
+  color: var(--text-secondary);
+  margin-top: 0.2em;
+}
+
+/* Правая колонка */
+.resume__contacts div,
+.resume__contacts a {
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  text-decoration: none;
+}
+.resume__salary, .resume__busy {
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 0.3em;
+  font-size: 1rem;
+}
+
+.resume__lang {
+  color: var(--text-main);
+}
+.resume__skills, .resume__qualities {
+  margin: 0.5em 0 0 0;
+  padding: 0 0 0 1.2em;
+  color: var(--text-main);
+}
+.resume__skills li, .resume__qualities li {
+  margin-bottom: 0.28em;
+  font-weight: 400;
+  font-size: 1rem;
+  position: relative;
+}
+.resume__skills li span {
+  color: var(--accent);
+  margin-left: 0.85em;
+  font-size: 0.95em;
+  font-weight: 600;
+  background: #f3f6fc;
+  border-radius: 6px;
+  padding: 0.08em 0.52em;
+}
+.resume__qualities li{
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 700px) {
+  .resume {
+    padding: 0 0 1.5rem 0;
+  }
+  .resume__header, .resume__top, .resume__main {
+    flex-direction: column;
+    gap: 1.2rem !important;
+    padding: 1.1rem !important;
+  }
+  .resume__divider {
+    margin: 0 1rem 0.7rem 1rem;
+  }
+}
+
+/* Декор */
+.resume__block-title {
+  position: relative;
+  padding-left: 12px;
+}
+.resume__block-title:before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent) 50%, var(--accent-light) 100%);
+  border-radius: 6px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 0;
+}
+
+.resume__top-container{
+  position: relative;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;600&display=swap');
+
+:root {
+  --bg-main: #F8F9FA;
+  --section-bg: #FFFFFF;
+  --section-border: #E5E7EB;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --text-main: #1F2937;
+  --text-secondary: #6B7280;
+  --shadow: 0 4px 18px rgba(59,130,246,0.09), 0 1.5px 8px rgba(60,142,236,0.03);
+  --radius: 18px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Обёртка страницы */
+.portfolio-page {
+  max-width: 1100px;
+  margin: 3.5rem auto 2.5rem auto;
+  padding: 0 0 2.8rem 0;
+  background: var(--section-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1.2px solid var(--section-border);
+}
+
+/* Основной заголовок */
+.portfolio__main-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+  letter-spacing: -1.2px;
+  padding-top: 2.1rem;
+}
+
+/* Блок работ */
+.portfolio__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.portfolio__work {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 2.7rem;
+  background: #F5F7FB;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(59,130,246,0.07);
+  border: 1px solid #e8edf3;
+  padding: 2.3rem 2rem;
+  transition: box-shadow 0.27s, background 0.27s;
+}
+.portfolio__work:hover {
+  background: #EFF4FB;
+  box-shadow: 0 8px 32px rgba(59,130,246,0.16);
+}
+
+.portfolio__work--reverse {
+  flex-direction: row-reverse;
+}
+
+.portfolio__work-img {
+  flex-shrink: 0;
+  width: 210px;
+  height: 140px;
+  background: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.07);
+  overflow: hidden;
+}
+.portfolio__work-img img, 
+.portfolio__work-img svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.portfolio__work-info {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  min-width: 0;
+  justify-content: center;
+}
+
+/* Заголовок и описание работы */
+.portfolio__work-title {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 1.27rem;
+  margin: 0 0 0.5em 0;
+  letter-spacing: -0.4px;
+  line-height: 1.26;
+}
+
+.portfolio__work-desc {
+  color: var(--text-secondary);
+  font-size: 1.07rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 880px) {
+  .portfolio__work,
+  .portfolio__work--reverse {
+    flex-direction: column !important;
+    gap: 1.7rem;
+    padding: 1.6rem 1.1rem;
+    text-align: left;
+  }
+  .portfolio__work-img {
+    width: 100%;
+    height: 180px;
+    min-height: 90px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio__container { padding: 0 0.4rem;}
+  .portfolio__main-heading { font-size: 1.25rem; padding-top: 0.8rem;}
+  .portfolio-page { border-radius: 8px;}
+  .portfolio__work { border-radius: 8px; }
+  .portfolio__work-img { border-radius: 6px;}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;600&display=swap');
+
+:root {
+  --bg-main: #F8F9FA;
+  --section-bg: #FFFFFF;
+  --section-border: #E5E7EB;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --text-main: #1F2937;
+  --text-secondary: #6B7280;
+  --shadow: 0 4px 18px rgba(59,130,246,0.09), 0 1.5px 8px rgba(60,142,236,0.03);
+  --radius: 18px;
+}
+
+.blog-page {
+  max-width: 900px;
+  margin: 3.3rem auto 2.5rem auto;
+  padding: 0 0 2.4rem 0;
+  background: var(--section-bg);
+  border-radius: var(--radius);
+  border: 1.1px solid var(--section-border);
+  box-shadow: var(--shadow);
+}
+
+.blog__container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.blog__main-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  letter-spacing: -1.1px;
+  padding-top: 2.1rem;
+}
+
+.blog__post {
+  background: #F4F7FA;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(59,130,246,0.07);
+  border: 1px solid #e8edf3;
+  margin-bottom: 2.1rem;
+  padding: 1.7rem 1.6rem 1.2rem 1.6rem;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.blog__post:hover {
+  background: #ebf4fb;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.13);
+}
+
+.blog__post-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+  gap: 0.9em 0.4em;
+}
+
+.blog__post-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.18rem;
+  color: var(--text-main);
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.blog__post-date {
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: #e8f0fb;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-left: 1em;
+  white-space: nowrap;
+}
+
+.blog__post-body {
+  color: var(--text-secondary);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 700px) {
+  .blog__container { padding: 0 0.5rem;}
+  .blog-page { border-radius: 10px; }
+  .blog__main-heading { font-size: 1.1rem; padding-top: 0.8rem;}
+  .blog__post { border-radius: 8px; padding: 1.1rem 0.7rem 1rem 0.7rem; }
+}
+
+
+

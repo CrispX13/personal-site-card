@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Резюме</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <div class="header__left-side">
+          <a href="/" class="heading__greeting-page">Начальная страница</a>
+        </div>
+        <div class="header__right-side">
+          <ul class="header__list">
+            <li class="header__item">
+              <a href="/interests.html" class="header__item-link">Интересы</a>
+            </li>
+            <li class="header__item">
+              <a href="/resume.html" class="header__item-link">Резюме</a>
+            </li>
+            <li class="header__item">
+              <a href="/projects.html" class="header__item-link"
+                >Примеры работ</a
+              >
+            </li>
+            <li class="header__item">
+              <a href="/blog.html" class="header__item-link">Блог</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="portfolio-page">
+      <div class="portfolio__container">
+        <h1 class="portfolio__main-heading">Примеры работ</h1>
+
+        <!-- Пример 1 -->
+        <section class="portfolio__work">
+          <div class="portfolio__work-img">
+            <img src="work1.jpg" alt="Скриншот проекта 1" />
+          </div>
+          <div class="portfolio__work-info">
+            <h2 class="portfolio__work-title">
+              Чат-приложение на React и ASP.NET Core
+            </h2>
+            <p class="portfolio__work-desc">
+              Реализация онлайн-чата с аутентификацией, отображением реальных
+              пользователей и приватными беседами. Для хранения данных
+              применялся PostgreSQL, подключение через SignalR и JWT
+              авторизация.
+            </p>
+          </div>
+        </section>
+
+        <!-- Пример 2 -->
+        <section class="portfolio__work">
+          <div class="portfolio__work-img">
+            <img src="work2.jpg" alt="Скриншот проекта 2" />
+          </div>
+          <div class="portfolio__work-info">
+            <h2 class="portfolio__work-title">
+              Интерактивная галерея на JavaScript
+            </h2>
+            <p class="portfolio__work-desc">
+              Веб-галерея с фильтрацией, масштабированием, просмотром
+              изображений в модальном окне. Использована адаптивная верстка,
+              плавные CSS-анимации и оптимизация загрузки картинок.
+            </p>
+          </div>
+        </section>
+
+        <!-- Пример 3 -->
+        <section class="portfolio__work portfolio__work--reverse">
+          <div class="portfolio__work-info">
+            <h2 class="portfolio__work-title">
+              REST API для школьного портала
+            </h2>
+            <p class="portfolio__work-desc">
+              Разработка backend на ASP.NET Core: регистрация, лента событий,
+              работа с ролями пользователей, интеграция с внешними сервисами
+              (email-рассылка, пуш-уведомления).
+            </p>
+          </div>
+          <div class="portfolio__work-img">
+            <img src="work3.jpg" alt="REST API веб-портал" />
+          </div>
+        </section>
+
+        <!-- Пример 4 -->
+        <section class="portfolio__work">
+          <div class="portfolio__work-img">
+            <!-- SVG как заглушка, если нет картинки -->
+            <svg
+              width="140"
+              height="100"
+              viewBox="0 0 140 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="140" height="100" rx="14" fill="#E5E7EB" />
+              <path
+                d="M20 75L55 35L90 75L120 48"
+                stroke="#60A5FA"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <circle cx="32" cy="46" r="7" fill="#3B82F6" />
+            </svg>
+          </div>
+          <div class="portfolio__work-info">
+            <h2 class="portfolio__work-title">Сайт-визитка на HTML и CSS</h2>
+            <p class="portfolio__work-desc">
+              Адаптивный одностраничный сайт с разделами “О себе”, “Навыки”,
+              “Портфолио”. Использованы Google Fonts, flex/grid layout,
+              современные CSS-переходы.
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer__container">
+        <span class="footer__author">Автор: Лоншаков Кирилл</span>
+      </div>
+    </footer>
+  </body>
+</html>
